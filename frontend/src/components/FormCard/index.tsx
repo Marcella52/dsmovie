@@ -7,20 +7,24 @@ import { validateEmail } from 'utils/validate';
 import './styles.css';
 
 type Props = {
-    movieId: string;
-};
+    movieId : string;
+}
 
-function FormCard({ movieId }: Props) {
+function FormCard( { movieId } : Props) {
+
     const navigate = useNavigate();
+
     const [movie, setMovie] = useState<Movie>();
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies/${movieId}`).then((response) => {
-            setMovie(response.data);
-        });
+        axios.get(`${BASE_URL}/movies/${movieId}`)
+            .then(response => {
+                setMovie(response.data);
+            });
     }, [movieId]);
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
         event.preventDefault();
 
         const email = (event.target as any).email.value;
@@ -39,12 +43,12 @@ function FormCard({ movieId }: Props) {
                 movieId: movieId,
                 score: score
             }
-        };
+        }
 
-        axios(config).then((response) => {
-            navigate('/');
+        axios(config).then(response => {
+            navigate("/");
         });
-    };
+    }
 
     return (
         <div className="dsmovie-form-container">
@@ -67,16 +71,15 @@ function FormCard({ movieId }: Props) {
                         </select>
                     </div>
                     <div className="dsmovie-form-btn-container">
-                        <button type="submit" className="btn btn-primary dsmovie-btn">
-                            Salvar
-                        </button>
+                        <button type="submit" className="btn btn-primary dsmovie-btn">Salvar</button>
                     </div>
-                </form>
+                </form >
                 <Link to="/">
                     <button className="btn btn-primary dsmovie-btn mt-3">Cancelar</button>
                 </Link>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 }
+
 export default FormCard;
