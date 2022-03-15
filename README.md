@@ -1,10 +1,10 @@
-# dsmovie
+# DSMovie
 
 Aplicativo de avaliação de filme feito na Semana Spring React com o professor Nélio Alves. 
 
-Figma do projeto:
-https://www.figma.com/file/gEZYKqJJs2gEhIB6k9ksGB/DSMovie3
+## Figma
+Clique [aqui](https://www.figma.com/file/gEZYKqJJs2gEhIB6k9ksGB/DSMovie3) para visualizar.
 
 
-Link para acessar o app (pode demorar para carregar):
-https://marcella-dsmovie.netlify.app/
+## Preview
+Clique [aqui](https://marcella-dsmovie.netlify.app/) para visualizar (pode demorar para carregar).
